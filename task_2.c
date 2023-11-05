@@ -10,12 +10,13 @@ char *lineptr = NULL, *token, *args[100];
 size_t n = 0;
 char *ola_law = "ola_law$ ", *error = "no such file or directory\n";
 int i = 0;
+ssize_t getnum;
+pid_t proc;
 
 while (1)
 {
 	write(STDOUT_FILENO, ola_law, strlen(ola_law));
-	ssize_t getnum = getline(&lineptr, &n, stdin);
-
+	getnum = getline(&lineptr, &n, stdin);
 	if (getnum == -1)
 	{
 		write(STDERR_FILENO, error, strlen(error));
@@ -31,7 +32,7 @@ while (1)
 		i++;
 	}
 	args[i] = NULL;
-	pid_t proc = fork();
+	proc = fork();
 
 	if (proc == -1)
 		perror("child process fail");

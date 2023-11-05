@@ -9,7 +9,6 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	int bit;
 	unsigned int index_check = BIT_SIZE - 1;
 
 	if (index > index_check)

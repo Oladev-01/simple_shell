@@ -7,15 +7,15 @@
 int main(void)
 {
 	char *lineptr = NULL, *token, *delim = " ", *args[100];
-	char *path = "/usr/bin/ls";
 	size_t n = 0;
 	char *ola_law = "ola_law$ ", *error = "No such file or directory\n";
-	int status, a = 0, b = 0;
-
+	ssize_t getnum;
+	pid_t proc;
+	
 	while (1)
 	{
 		write(STDOUT_FILENO, ola_law, strlen(ola_law));
-		ssize_t getnum = getline(&lineptr, &n, stdin);
+		getnum = getline(&lineptr, &n, stdin);
 
 		if (getnum == -1)
 		{
@@ -27,7 +27,7 @@ int main(void)
 		token = strtok(lineptr, delim);
 		args[0] = token;
 		args[1] = NULL;
-		pid_t proc = fork();
+		proc = fork();
 
 		if (proc == -1)
 			perror("child process fail");
@@ -37,12 +37,7 @@ int main(void)
 				exit(99);
 		}
 		else
-		{
-			waitpid(proc, &status, 0);
-			if (WIFEXITED(status) && WEXITSTATUS(status) == 1)
-				write(STDERR_FILENO, error, strlen(error));
-			exit(100);
-		}
+			my_parent_id(proc);
 	}
 	free(lineptr);
 	return (0);
