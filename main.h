@@ -11,4 +11,5 @@
 int get_bit(unsigned long int n, unsigned int index);
 int set_bit(unsigned long int *n, unsigned int index);
 void my_parent_id(pid_t proc);
+extern char **environ;
 #endif
