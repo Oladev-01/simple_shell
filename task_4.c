@@ -1,9 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#define MAX_LINE_LENGTH 100
-
+#include "main.h"
 /**
  * main - function that exits the shell
  * a program implements a basic shell that
@@ -13,18 +8,15 @@
 
 int main(void)
 {
-	char input[MAX_LINE_LENGTH];
+	char input[BUFF];
 
 	while (1)
 	{
-		printf("$ ");
-		fflush(stdout);
-	}
-
-	if (fgets(input, MAX_LINE_LENGTH, stdin) == NULL)
+		printf("$ ola_law ");
+	if (fgets(input, BUFF, stdin) == NULL)
 	{
 		perror("fgets");
-		exit(1);
+		exit(100);
 	}
 
 	input[strcspn(input, "\n")] = '\0';
@@ -37,6 +29,7 @@ int main(void)
 	else
 	{
 		system(input);
+	}
 	}
 	return (0);
 }

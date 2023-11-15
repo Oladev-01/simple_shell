@@ -8,6 +8,7 @@
 #include <stddef.h>
 #include <string.h>
 #include <sys/wait.h>
+#define BUFF 1024
 int get_bit(unsigned long int n, unsigned int index);
 int set_bit(unsigned long int *n, unsigned int index);
 void my_parent_id(pid_t proc);
