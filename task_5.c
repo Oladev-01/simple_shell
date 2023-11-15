@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * main - a function that prints the current environment
+ * print_env - a function that prints the current environment
  * Return: 0 for success
  */
 
-int main(void)
+void print_env(void)
 {
 	char **env;
 	pid_t proc;
@@ -32,6 +32,4 @@ int main(void)
 			exit(100);
 		}
 	}
-
-	return (0);
 }

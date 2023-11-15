@@ -1,12 +1,12 @@
 #include "main.h"
 /**
- * main - function that exits the shell
+ * exit_shell - function that exits the shell
  * a program implements a basic shell that
  * reads and executes user commands.
  * Return: 0 for success
  */
 
-int main(void)
+void exit_shell(void)
 {
 	char input[BUFF];
 
@@ -31,5 +31,4 @@ int main(void)
 		system(input);
 	}
 	}
-	return (0);
 }

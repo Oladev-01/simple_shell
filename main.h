@@ -12,5 +12,10 @@
 int get_bit(unsigned long int n, unsigned int index);
 int set_bit(unsigned long int *n, unsigned int index);
 void my_parent_id(pid_t proc);
+void cret_ver(void);
+void cret_ver_2(void);
+void read_inp(void);
+void exit_shell(void);
+void print_env(void);
 extern char **environ;
 #endif

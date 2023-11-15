@@ -4,7 +4,8 @@
  * checks if the command exists
  * Return:  for success 0
  */
-int main(void) {
+void read_inp(void)
+{
 	char input[BUFF], *token;
 	int argCount;
 	char *args[32], *command, *path, *path_copy, *dir, cmd_path[BUFF];
@@ -65,6 +66,4 @@ int main(void) {
 
 		free(path_copy);
 	}
-
-	return (0);
 }

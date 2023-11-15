@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- *main - this function creates a version of the unix env that
+ *cret_ver_2 - this function creates a version of the unix env that
  * executes commands and accepts args
  *Return: 0 for success
  */
-int main(void)
+void cret_ver_2(void)
 {
 char *lineptr = NULL, *token, *args[100];
 size_t n = 0;
@@ -45,7 +45,6 @@ while (1)
 		my_parent_id(proc);
 }
 	free(lineptr);
-	return (0);
 }
 
 /**
