@@ -54,7 +54,7 @@ void my_parent_id(pid_t proc)
 
 	waitpid(proc, &status, 0);
 	if (WIFEXITED(status) && WEXITSTATUS(status) == 1)
-	{	
+	{
 		write(STDERR_FILENO, error, strlen(error));
 		exit(100);
 	}
