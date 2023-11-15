@@ -41,21 +41,3 @@ void cret_ver(void)
 	}
 	free(lineptr);
 }
-
-/**
- * my_parent_id - this functon handles the parent process
- *@proc: this is the id of the passed from the child process
- *Return: void
- */
-void my_parent_id(pid_t proc)
-{
-	char *error = "no such file or directory\n";
-	int status;
-
-	waitpid(proc, &status, 0);
-	if (WIFEXITED(status) && WEXITSTATUS(status) == 1)
-	{
-		write(STDERR_FILENO, error, strlen(error));
-		exit(100);
-	}
-}

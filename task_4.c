@@ -24,7 +24,7 @@ void exit_shell(void)
 	if (strcmp(input, "exit") == 0)
 	{
 		printf("exiting shell.\n");
-		break;
+		exit(0);
 	}
 	else
 	{
