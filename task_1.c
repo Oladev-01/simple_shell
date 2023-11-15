@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * cret_ver - this porgram creats a small version of the unix
+ * main - this porgram creats a small version of the unix
  * system handling only executables
  *Return: void for success
  */
-void cret_ver(void)
+int main(void)
 {
 	char *lineptr = NULL, *token, *delim = " ", *args[100];
 	size_t n = 0;
