@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * main - this porgram creats a small version of the unix
+ * cret_ver - this porgram creats a small version of the unix
  * system handling only executables
- *Return: 0 for success
+ *Return: void for success
  */
-int main(void)
+void cret_ver(void)
 {
 	char *lineptr = NULL, *token, *delim = " ", *args[100];
 	size_t n = 0;
@@ -40,7 +40,6 @@ int main(void)
 			my_parent_id(proc);
 	}
 	free(lineptr);
-	return (0);
 }
 
 /**
