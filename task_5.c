@@ -6,8 +6,9 @@
  * Return: 0 for success
  */
 
-void print_env(char *env[])
+void print_env()
 {
+	char **env;
 	pid_t proc;
 	int status;
 

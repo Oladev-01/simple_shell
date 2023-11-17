@@ -5,7 +5,7 @@
  */
 void simple_shell(void)
 {
-	char *getstr, exit_out[10] = "exit", envi[10] = "env", *envr[10];
+	char *getstr, exit_out[10] = "exit";
 	ssize_t num;
 	size_t n = 0;
 	int i;
@@ -24,13 +24,9 @@ void simple_shell(void)
 
 		if (strcmp(getstr, exit_out) == 0)
 			exit_shell(getstr);
-		if (strcmp(getstr, envi) == 0)
-		{
-			*envr[10] = *getstr;
-			print_env(envr);
-		}
 		else
 			cret_ver_2(getstr);
+		print_env();
 
 	}
 }
