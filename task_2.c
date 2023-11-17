@@ -2,28 +2,15 @@
 /**
  *cret_ver_2 - this function creates a version of the unix env that
  * executes commands and accepts args
+ *@lineptr: this is the string that should contain the command
  *Return: 0 for success
  */
-void cret_ver_2(void)
+void cret_ver_2(char *lineptr)
 {
-char *lineptr = NULL, *token, *args[100];
-size_t n = 0;
-char *ola_law = "ola_law$ ", *error = "no such file or directory\n";
+char *token, *args[100];
 int i = 0;
-ssize_t getnum;
 pid_t proc;
 
-while (1)
-{
-	write(STDOUT_FILENO, ola_law, strlen(ola_law));
-	getnum = getline(&lineptr, &n, stdin);
-	if (getnum == -1)
-	{
-		write(STDERR_FILENO, error, strlen(error));
-		break;
-	}
-	if (lineptr[getnum - 1] == '\n')
-		lineptr[getnum - 1] = '\0';
 	  token = strtok(lineptr, " ");
 	while (token != NULL)
 	{
@@ -44,8 +31,6 @@ while (1)
 	else
 		my_parent_id(proc);
 }
-	free(lineptr);
-}
 
 /**
  * my_parent_id - this functon handles the parent process
@@ -54,13 +39,12 @@ while (1)
  */
 void my_parent_id(pid_t proc)
 {
-	char *error = "no such file or directory\n";
 	int status;
 
 	waitpid(proc, &status, 0);
 	if (WIFEXITED(status) && WEXITSTATUS(status) == 1)
 	{
-		write(STDERR_FILENO, error, strlen(error));
+		perror("Parent process fail");
 		exit(100);
 	}
 }

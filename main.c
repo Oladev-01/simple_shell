@@ -1,10 +1,10 @@
 #include "main.h"
+/**
+ *main -= this is the entry point of the program
+ *Return: 0- for success
+ */
 int main(void)
 {
-    cret_ver();
-    cret_ver_2();
-    read_inp();
-exit_shell();
-print_env();
-return (0);
+	simple_shell();
+	return (0);
 }

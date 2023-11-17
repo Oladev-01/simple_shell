@@ -9,13 +9,11 @@
 #include <string.h>
 #include <sys/wait.h>
 #define BUFF 1024
-int get_bit(unsigned long int n, unsigned int index);
-int set_bit(unsigned long int *n, unsigned int index);
-void cret_ver_2(void);
+void simple_shell(void);
+void cret_ver_2(char *lineptr);
 void my_parent_id(pid_t proc);
-void cret_ver(void);
-void read_inp(void);
-void exit_shell(void);
-void print_env(void);
+void exit_shell(char *input);
+void print_env(char *env[]);
+void exec_command(char *command, char **av);
 extern char **environ;
 #endif
