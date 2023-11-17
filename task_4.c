@@ -13,7 +13,6 @@ void exit_shell(char *input)
 
 	if (strcmp(input, "exit") == 0)
 	{
-		printf("exiting shell.\n");
 		exit(0);
 	}
 	else
