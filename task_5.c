@@ -1,12 +1,10 @@
 #include "main.h"
 /**
- * print_env - a function that prints the current environmentto
- *@env: this is the array to hold the strings of
- * the environment returned by the pointer to it
+ * print_env - a function that prints the current environment
  * Return: 0 for success
  */
 
-void print_env()
+void print_env(void)
 {
 	char **env;
 	pid_t proc;
@@ -21,6 +19,7 @@ void print_env()
 	{
 		printf("%s\n", *env);
 	}
+	exit(0);
 	}
 	else
 	{
