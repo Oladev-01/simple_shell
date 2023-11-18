@@ -13,7 +13,7 @@ void simple_shell(void);
 void cret_ver_2(char *lineptr);
 void my_parent_id(pid_t proc);
 void exit_shell(char *input);
-void print_env();
+void print_env(void);
 void exec_command(char *command, char **av);
 extern char **environ;
 #endif
